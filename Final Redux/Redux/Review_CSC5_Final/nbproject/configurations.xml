@@ -15,6 +15,10 @@
       <itemPath>main.cpp</itemPath>
       <itemPath>prob1.cpp</itemPath>
       <itemPath>prob2.cpp</itemPath>
+      <itemPath>prob3.cpp</itemPath>
+      <itemPath>prob4.cpp</itemPath>
+      <itemPath>prob5.cpp</itemPath>
+      <itemPath>prob6.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -44,6 +48,14 @@
       </item>
       <item path="prob2.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="prob3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="prob4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="prob5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="prob6.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -70,6 +82,14 @@
       <item path="prob1.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="prob2.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="prob3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="prob4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="prob5.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="prob6.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

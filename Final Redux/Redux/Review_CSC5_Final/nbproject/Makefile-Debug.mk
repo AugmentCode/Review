@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=Cygwin-Windows
-CND_DLIB_EXT=dll
+CND_PLATFORM=GNU-Linux
+CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -37,7 +37,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/prob1.o \
-	${OBJECTDIR}/prob2.o
+	${OBJECTDIR}/prob2.o \
+	${OBJECTDIR}/prob3.o \
+	${OBJECTDIR}/prob4.o \
+	${OBJECTDIR}/prob5.o \
+	${OBJECTDIR}/prob6.o
 
 
 # C Compiler Flags
@@ -58,9 +62,9 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/review_csc5_final.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/review_csc5_final
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/review_csc5_final.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/review_csc5_final: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/review_csc5_final ${OBJECTFILES} ${LDLIBSOPTIONS}
 
@@ -78,6 +82,26 @@ ${OBJECTDIR}/prob2.o: prob2.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/prob2.o prob2.cpp
+
+${OBJECTDIR}/prob3.o: prob3.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/prob3.o prob3.cpp
+
+${OBJECTDIR}/prob4.o: prob4.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/prob4.o prob4.cpp
+
+${OBJECTDIR}/prob5.o: prob5.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/prob5.o prob5.cpp
+
+${OBJECTDIR}/prob6.o: prob6.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/prob6.o prob6.cpp
 
 # Subprojects
 .build-subprojects:

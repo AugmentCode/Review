@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   main.cpp
  * Author: Kevin
@@ -24,6 +18,10 @@ using namespace std;
 //Prototypes
 void prob1();
 void prob2();
+void prob3();
+void prob4();
+void prob5();
+void prob6();
 
 int main(int argc, char** argv) {
     //Seed for random number generator
@@ -32,8 +30,8 @@ int main(int argc, char** argv) {
     char choice;
     
     do{
-        cout<<endl;
-        cout<<"CSC-5 Final Redux\n----------------\n\n";
+        cout<<endl<<endl;
+        cout<<"CSC-5 Final Redux:\n--------------------\n";
         cout<<"Enter 1 for Problem 1\n";
         cout<<"Enter 2 for Problem 2\n";
         cout<<"Enter 3 for Problem 3\n";
@@ -44,15 +42,15 @@ int main(int argc, char** argv) {
         cout<<"\nUser Input: ";
         cin>>choice;
     
-
+        cout<<endl;
     
         switch(choice){
             case '1': prob1();break;
             case '2': prob2();break;
-            case '3': ;break;
-            case '4': ;break;
-            case '5': ;break;
-            case '6': ;break;
+            case '3': prob3();break;
+            case '4': prob4();break;
+            case '5': prob5();break;
+            case '6': prob6();break;
 
             default: cout<<"\nOption Exit chosen. Terminating...\n";
         }
