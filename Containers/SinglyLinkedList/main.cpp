@@ -2,127 +2,66 @@
 
 using namespace std;
 
-class Link{
-    private:
-        struct Node{
-            int data;
-            Node* next;
-        }
-        *head;
-        
-    public:
-        Link(){ head = NULL; }
-        
-        void insert(int);
-        void showList();
-        void removeByVal(int);
-        int countNodes();
-        void removeByPlacement(int);
-};
+#include "Link.h"
 
-void Link::insert(int inVal){
-    if(head == NULL){
-        head = new Node;
-        head->data = inVal;
-        head->next = NULL;
-    }else{
-        Node *temp = new Node;
-        
-        temp->data = inVal;
-        temp->next = head;
-        head = temp;
-    }
-}
-
-void Link::showList(){
-    if(countNodes() > 0){
-        Node *temp = head;
-
-        cout<<endl;
-
-        cout<<"Count = "<<countNodes()<<endl;
-        while(temp != NULL){
-            cout<<temp->data<<" ";
-            temp = temp->next;
-        };
-    }else
-        cout<<"\nEmpty\n";
-    cout<<endl;
-}
-
-void Link::removeByVal(int inVal){
-    Node *temp = head;
-    Node *prev;
-    while(temp != NULL){
-        prev = temp;
-        
-        if(inVal == head->data){
-            head = head->next;
-            return;
-        }else if(temp->next->data == inVal){
-            
-            temp->next = temp->next->next;
-            temp = prev;
-            return;
-        }
-        temp = temp->next;
-    };
-}
-
-int Link::countNodes(){
-    int numNode = 0;
-    Node *temp = head;
-    while(temp != NULL){
-        numNode++;
-        temp = temp->next;
-    };
-return numNode;}
-
-
-void Link::removeByPlacement(int nNode){
-    Node *temp = head;
-    Node *prev;
-    int maxNumNode = countNodes();
-    
-    if(nNode > maxNumNode && nNode <= 0){
-        cout<<"\nError: Node's Number to be deleted is out of bound.\n";
-    }else{
-
-        if(nNode == 1)
-            head = head->next;
-        else{
-            for(int i = 0; i < nNode; i++){
-                prev = temp;
-                temp = temp->next;
-            }
-
-            if(countNodes() - nNode == 1)
-                c
-            temp = prev;
-             
-            
-            
-        }
-    }
-        
-}
 int main(){
-    Link l;
+    Link<int> l;
     
     l.insert(1);
     l.insert(2);
     l.insert(3);
-    
-    l.showList();
-    
-    l.removeByVal(3);
+    l.insert(4);
+    l.insert(5);
+    l.insert(6);
     
     l.showList();
   
-    l.removeByPlacement(2);
+    l.removeByIndex(2);
     
     l.showList();
     
-
+    l.insertByIndex(69, 3);
     
+    l.showList();
+    
+    l.insertLast(44);
+    
+    l.showList();
+    
+    l.insert(99);
+    
+    l.showList();
+    
+    cout<<endl<<"-----------------------------------------------------"<<endl;
+    
+    Link<string> ls;
+    
+    ls.insert("Water");
+    ls.insert("Coke");
+    ls.insert("Sprite");
+    ls.insert("Mountain Dew");
+    ls.insert("Fanta Orange");
+    ls.insert("Hi-C");
+    
+    ls.showList();
+  
+    ls.removeByIndex(3);
+    
+    ls.showList();
+    
+    ls.insertByIndex("Apple Juice", 3);
+    
+    ls.showList();
+    
+    ls.insertLast("Grape Juice");
+    
+    ls.showList();
+    
+    ls.insert("Orange Juice");
+    
+    ls.showList();
+    
+    ls.removeByVal("Mountain Dew");
+    
+    ls.showList();
 return 0;}
