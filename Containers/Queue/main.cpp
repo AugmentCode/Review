@@ -10,20 +10,24 @@ class Queue{
             Node* prev;
         }
         *tail, *head;
-        Node *t1;
+
         int cntNode;
         
     public:
         Queue();
         ~Queue();
-        void insert(int);
-        void display();
+        void push(int);
+        void displayAll();
+        int getValue();
+        void pop();
+        int getCntNode() const {return cntNode;}
 };
 
 Queue::Queue(){
+    head = NULL;
     tail = NULL;
     cntNode = 0;
-    t1 = new Node;
+
 }
 
 Queue::~Queue(){
@@ -31,43 +35,66 @@ Queue::~Queue(){
     delete[] head;
 }
 
-void Queue::insert(int inVal){
+void Queue::pop(){
+    tail = tail->prev;
+}
+
+int Queue::getValue(){
+    return tail->data;
+}
+
+void Queue::push(int inVal){
     
-    if(tail == NULL){
-        tail = new Node;
-        tail->data = inVal;
-        tail->prev = t1;
-        cntNode++;
-    }else{
-        Node *temp = new Node;
-        
-        if(cntNode == 0)
-            t1->prev = temp;
-
-        temp->data = inVal;
-        temp->prev = NULL;
+    Node *temp = new Node;
+    temp->data = inVal;
+    temp->prev = NULL;
+    
+    if(tail == NULL)
+        tail = temp;
+    else
         head->prev = temp;
-        head = temp;
-        
-    }
+    
+    head = temp;
+    
+    cntNode++;
 }
 
-void Queue::display(){
-    Node *temp = tail;
-    while(temp != NULL){
-        cout<<temp->data<<"  "; 
-        temp = temp->prev;
-    };
+void Queue::displayAll(){   
+    if(tail != NULL){
+        
+        Node *temp = tail;
+
+        cout<<endl<<endl;
+
+        cout<<"Queue: ";
+        
+        while(temp != NULL){
+            cout<<temp->data<<" ";
+            temp = temp->prev;
+        };
+
+        cout<<endl<<endl;
+    }else 
+        cout<<"\nQueue is EMPTY.\n";
+    
 }
+
 int main(int argc, char** argv) {
     Queue q;
     
-    q.insert(1);
-    q.insert(2);
-    q.insert(3);
-    q.insert(4);
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
     
-    q.display();
+    q.displayAll();
+    
+    for(int i = 0; i < q.getCntNode(); i++){
+        cout<<q.getValue()<<endl;
+        q.pop();
+    }
+    q.displayAll();
+    
     return 0;
 }
 
