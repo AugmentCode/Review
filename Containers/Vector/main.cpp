@@ -16,82 +16,10 @@
 
 using namespace std;
 
-class Vector{
-private:
-    int *arr;
-    int cIndx;
-    int size;
-public:
-    Vector();
-    ~Vector();
-    void insert(int);
-    void deleteVal(int);
-    int getValue(int);
-    int get_num_filled() const {return cIndx;}
-};
+#include "Vector.h"
 
-//Constructor
-Vector::Vector(){
-    size = 10;
-    arr = new int[size];
-    cIndx = 0;
-}
-
-//Destructor
-Vector::~Vector(){
-    delete[] arr;
-}
-
-//Inserts value onto the vector
-void Vector::insert(int inVal){
-    if(cIndx <= size){
-        arr[cIndx++] = inVal;
-    }else{
-        int *temp = new int[++size];
-        for(int i = 0; i < size - 1; i++)
-            temp[i] = arr[i];
-        temp[cIndx++] = inVal;
-        
-        delete[] arr;
-        
-        arr = new int[size];
-        
-        for(int i = 0; i < size; i++)
-            arr[i] = temp[i];
-        
-        delete[]temp;
-    }
-}
-
-//Returns a value within index
-int Vector::getValue(int indx){
-    if(indx > size - 1){
-        cout<<"\nError: Index has exceeded the Vector's size of "<<size<<endl;
-    }else{
-        return arr[indx];
-    }
-    return 0;
-}
-
-//
-void Vector::deleteVal(int inVal){
-    
-    for(int i = 0; i < size; i++)
-        if(inVal == arr[i]){
-            int *temp = new int[--size];
-            for(int j = 0; j < size; j++)
-                if(j != i)
-                    temp[j] = arr[j];
-                
-            
-            delete[] arr;
-            arr = temp;
-            delete[] temp;
-        }
-    
-}
 int main(int argc, char** argv) {
-    Vector v;
+    Vector<int> v;
     
     v.insert(1);
     v.insert(2);
@@ -102,12 +30,36 @@ int main(int argc, char** argv) {
     v.insert(7);
     v.insert(8);
     v.insert(9);
+    v.adv_Insert(999);
     v.insert(10);
     v.insert(11);
-
+    v.insert(12);
+    v.insert(13);
+    v.insert(14);
+    v.insert(15);
     
-    for(int i = 0; i < v.get_num_filled(); i++)
-        cout<<i<<" -> "<<v.getValue(i)<<endl;
+    
+    v.displayAll();
+    
+    cout<<endl<<endl;
+    
+    v.deleteVal(4);
+    
+    v.displayAll();
+    
+    cout<<endl<<endl;
+    
+    v.deleteIndx(7);
+
+    v.displayAll();
+    
+    cout<<endl<<endl;
+    
+    v.insert(24);
+    
+    v.displayAll();
+    
+    cout<<endl<<endl;
     return 0;
 }
 
