@@ -1,13 +1,15 @@
 /* 
  * File:   main.cpp
  * Author: dangerouspirate
- * Purpose: Demonstrates the uses of Bitwise Operators
+ * Purpose: Demonstrates the uses of Bitwise Operators: LEFT,RIGHT,AND,OR ,XOR
+ *                                                       << ,  >> , & , | , ^ 
+ *          Also uses bitset to obtain binary values from integers
  * Created on June 26, 2018, 12:17 AM
  */
 
 #include <cstdlib>
 #include <iostream>
-#include <climits>
+#include <bitset>       //User to Convert integers to binary
 
 using namespace std;
 
@@ -52,6 +54,12 @@ using namespace std;
 int main(int argc, char** argv) {
     unsigned int num1 = 3, temp;
     
+    /***************************************************************************
+     *                                                                         *
+     *                            LEFT SHIFT                                   *
+     *                                                                         *
+     ***************************************************************************/
+    
     cout<<"*************************************************************"<<endl
         <<"*            LEFT SHIFT DEMONSTRATION (multiply BY 2)       *"<<endl
         <<"*************************************************************"<<endl
@@ -74,6 +82,11 @@ int main(int argc, char** argv) {
     cout<<"\n\nSee how each time the integer gets MULTIPLIED by 2 "
         <<"when LEFT SHIFTED\n\n";
     
+    /***************************************************************************
+     *                                                                         *
+     *                            RIGHT SHIFT                                  *
+     *                                                                         *
+     ***************************************************************************/
     
     cout<<"*************************************************************"<<endl
         <<"*            RIGHT SHIFT DEMONSTRATION (divide BY 2)        *"<<endl
@@ -99,25 +112,84 @@ int main(int argc, char** argv) {
     cout<<"\n\nSee how each time the integer gets DIVIDED by 2 "
         <<"when LEFT SHIFTED\n\n";
     
+    /***************************************************************************
+     *                                                                         *
+     *                            NOT SHIFT                                    *
+     *                                                                         *
+     ***************************************************************************/
     
     cout<<"*************************************************************"<<endl
         <<"*    Bitwise NOT Operator DEMONSTRATION (FLIPS the bits)    *"<<endl
         <<"*************************************************************"<<endl
         <<endl;
     
-    num1 = 0x00000000010;
-    unsigned int num2 = 0x0000FFFF;
-
+    num1 = 4;
     
-    cout<<"\nInteger = "<<num1<<endl;
+    unsigned int num2 = 7;
     
-    cout<<"\n~BinaryValue = "<<~num1<<endl;
+    cout<<"Let num1 = "<<num1<<endl;
     
-    cout<<"\nMax of int = "<<INT_MAX<<endl;
+    cout<<"\nBinary of "<<num1<<" =  "<<bitset<4>(num1)<<endl;
     
-    temp = ~num1;
+    cout<<"~Binary_Num1 = "<< ~( bitset<4>(num1) ) <<endl;
     
-    cout<<endl<<INT_MAX<<" - "<<temp<<" = "<<(INT_MAX - temp)<<endl;
+    
+    
+    /***************************************************************************
+     *                                                                         *
+     *                                 AND                                     *
+     *                                                                         *
+     ***************************************************************************/
+    
+    cout<<endl;
+    cout<<"*************************************************************"<<endl
+        <<"*    Bitwise AND Operator DEMONSTRATION (TURN BITS OFF)     *"<<endl
+        <<"*************************************************************"<<endl
+        <<endl;
+   
+    cout<<"Let num1 = "<<num1<<" ------> "<<bitset<4>(num1)<<endl;
+    cout<<"Let num2 = "<<num2<<" ------> "<<bitset<4>(num2)<<endl<<endl;
+    
+    cout<<"Binary_num1 & Binary_num2 = "<< ( bitset<4>(num1) & bitset<4>(num2) )
+        <<endl;
+    
+    /***************************************************************************
+     *                                                                         *
+     *                                 OR                                      *
+     *                                                                         *
+     ***************************************************************************/
+    
+    cout<<endl;
+    cout<<"*************************************************************"<<endl
+        <<"*    Bitwise OR Operator DEMONSTRATION (TURN BITS ON)       *"<<endl
+        <<"*************************************************************"<<endl
+        <<endl;
+   
+    cout<<"Let num1 = "<<num1<<" ------> "<<bitset<4>(num1)<<endl;
+    cout<<"Let num2 = "<<num2<<" ------> "<<bitset<4>(num2)<<endl<<endl;
+    
+    cout<<"Binary_num1 | Binary_num2 = "<< ( bitset<4>(num1) | bitset<4>(num2) )
+        <<endl;
+    
+    
+    
+    /***************************************************************************
+     *                                                                         *
+     *                                 ~OR                                     *
+     *                                                                         *
+     ***************************************************************************/
+    
+    cout<<endl;
+    cout<<"*************************************************************"<<endl
+        <<"*    Bitwise XOR Operator DEMONSTRATION (~OR)               *"<<endl
+        <<"*************************************************************"<<endl
+        <<endl;
+   
+    cout<<"Let num1 = "<<num1<<" ------> "<<bitset<4>(num1)<<endl;
+    cout<<"Let num2 = "<<num2<<" ------> "<<bitset<4>(num2)<<endl<<endl;
+    
+    cout<<"Binary_num1 ^ Binary_num2 = "<< ( bitset<4>(num1) ^ bitset<4>(num2) )
+        <<endl;
     return 0;
 }
 
