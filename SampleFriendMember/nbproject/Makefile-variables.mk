@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=vector
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/vector
+CND_ARTIFACT_NAME_Debug=samplefriendmember
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/samplefriendmember
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=vector.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/vector.tar
+CND_PACKAGE_NAME_Debug=samplefriendmember.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/samplefriendmember.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=vector
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/vector
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=vector.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/vector.tar
+CND_PLATFORM_Release=Cygwin-Windows
+CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
+CND_ARTIFACT_NAME_Release=samplefriendmember
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/samplefriendmember
+CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
+CND_PACKAGE_NAME_Release=samplefriendmember.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/samplefriendmember.tar
 #
 # include compiler specific variables
 #
